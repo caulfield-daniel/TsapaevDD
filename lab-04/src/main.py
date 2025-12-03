@@ -3,8 +3,7 @@ from performance_test import (
     print_results,
     analyze_theoretical_vs_practical,
 )
-from plot_results import (plot_time_vs_size, plot_time_vs_datatype,
-                          create_summary_table)
+from plot_results import plot_time_vs_size, plot_time_vs_datatype, create_summary_table
 
 
 def main():
@@ -14,8 +13,8 @@ def main():
     # Характеристики ПК
     pc_info = """
     Характеристики ПК для тестирования:
-    - Процессор: Intel Core i3-1220P @ 1.5GHz
-    - Оперативная память: 8 GB DDR4
+    - Процессор: AMD Ryzen 7 5800H 3.20GHz
+    - Оперативная память: 16 GB DDR4
     - ОС: Windows 11
     - Python: 3.12.10
     """
