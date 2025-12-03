@@ -505,7 +505,7 @@ if __name__ == "__main__":
 ХЕШ-ФУНКЦИИ И ХЕШ-ТАБЛИЦЫ
 ============================================================
 
-    Характеристики ПК для тестирования:
+   Характеристики ПК для тестирования:
     - Процессор: AMD Ryzen 7 5800H 3.20GHz
     - Оперативная память: 16 GB DDR4
     - ОС: Windows 11
@@ -605,9 +605,9 @@ djb2         open_double     0.003695     0.003254     1.20       0.400
 СОЗДАНИЕ ГРАФИКОВ...
 ```
 
-<image src="./ОТЧЁТ/collision_stats.png" style="display:block; margin: auto; height:400px">
-<image src="./ОТЧЁТ/hash_functions_insert.png" style="display:block; margin: auto; height:400px">
-<image src="./ОТЧЁТ/load_factor_impact.png" style="display:block; margin: auto; height:400px">
+![collision stats](./report/collision_stats.png)
+![hash functions insert](./report/hash_functions_insert.png)
+![load factor impact](./report/load_factor_impact.png)
 
 ## Анализ эффективности хеш-функций и хеш-таблиц
 
