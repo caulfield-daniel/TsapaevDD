@@ -1,42 +1,39 @@
+# lab-08/src/modules/performance_analysis.py
 import matplotlib.pyplot as plt
 import timeit
-from modules.greedy_algorithms import (
-    huffman_coding,
-    generate_frequencies,
-    generate_text,
-)
+from typing import List, Callable
+from modules.greedy_algorithms import huffman_coding, generate_frequencies, generate_text
 
 
-def measure_huffman_time(size, repeats=3):
+def measure_huffman_time(size: int, repeats: int = 3) -> float:
     """
     Измеряет время выполнения алгоритма Хаффмана для текста заданного размера.
 
     Args:
-        size: размер текста
+        size: размер текста (количество символов)
         repeats: количество повторов для усреднения
 
     Returns:
         среднее время выполнения в миллисекундах
     """
 
-    def execution_time():
+    def execution_time() -> None:
         text = generate_text(size)
         frequencies = generate_frequencies(text)
         huffman_coding(frequencies)
 
-    # Используем timeit для более точного измерения
     total_time = timeit.timeit(execution_time, number=repeats)
     return (total_time / repeats) * 1000  # в миллисекундах
 
 
-def visualization(sizes):
+def visualization(sizes: List[int]) -> None:
     """
     Визуализация времени выполнения алгоритма Хаффмана.
 
     Args:
-        sizes: список размеров для тестирования
+        sizes: список размеров текста для тестирования
     """
-    huffman_times = [measure_huffman_time(size) for size in sizes]
+    huffman_times: List[float] = [measure_huffman_time(size) for size in sizes]
 
     print("Время выполнения алгоритма Хаффмана для разных размеров:")
     print(huffman_times)
