@@ -1,5 +1,3 @@
-
-# lab-08/src/modules/task.py
 import sys
 from typing import List, Tuple
 
