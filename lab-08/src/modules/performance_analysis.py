@@ -1,8 +1,11 @@
-# lab-08/src/modules/performance_analysis.py
 import matplotlib.pyplot as plt
 import timeit
-from typing import List, Callable
-from modules.greedy_algorithms import huffman_coding, generate_frequencies, generate_text
+from typing import List
+from modules.greedy_algorithms import (
+    huffman_coding,
+    generate_frequencies,
+    generate_text,
+)
 
 
 def measure_huffman_time(size: int, repeats: int = 3) -> float:
@@ -47,5 +50,5 @@ def visualization(sizes: List[int]) -> None:
     plt.legend(loc="upper left", title="Метод")
     plt.grid(True, linestyle="--", alpha=0.5)
     plt.tight_layout()
-    plt.savefig("./report/Huffman.png", dpi=300, bbox_inches="tight")
+    plt.savefig("huffman.png", dpi=300, bbox_inches="tight")
     plt.show()
