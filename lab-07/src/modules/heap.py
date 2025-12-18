@@ -46,9 +46,7 @@ class MinHeap:
             return
 
         # Случай когда элемент имеет два потомка
-        if self._get_left_child(
-            index
-        ) < len(self.tree) and self._get_right_child(
+        if self._get_left_child(index) < len(self.tree) and self._get_right_child(
             index
         ) < len(self.tree):
             min_child_index = self._get_min_index(
@@ -81,16 +79,17 @@ class MinHeap:
         # Временная сложность: O(log n)
 
     def extract(self):
-        """Извлечение корня"""
-        if len(self.tree) > 0:
-            root = self.tree.pop(0)
-            if len(self.tree) > 0:
-                last_element = self.tree.pop()
-                self.tree.insert(0, last_element)
-                self._sift_down(0)
-            return root
-        else:
+        """Извлечение корня (исправлено)"""
+        if len(self.tree) == 0:
             return "Куча пуста"
+
+        if len(self.tree) == 1:
+            return self.tree.pop()
+
+        root = self.tree[0]
+        self.tree[0] = self.tree.pop()  # Последний элемент на место корня
+        self._sift_down(0)
+        return root
         # Временная сложность: O(log n)
 
     def peek(self):
