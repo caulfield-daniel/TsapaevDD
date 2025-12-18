@@ -4,8 +4,8 @@ import random
 from modules.dynamic_programming import (
     knapsack_01,
     fib_tabulation,
-    lcs,
     levenshtein_distance,
+    lcs_length
 )
 import matplotlib.pyplot as plt
 import os
@@ -182,7 +182,7 @@ def visualization_lcs(lengths: List[int]) -> None:
     times, memories = [], []
     for length in lengths:
         str1, str2 = generate_strings(length)
-        time, mem = measure_performance(lcs, str1, str2)
+        time, mem = measure_performance(lcs_length, str1, str2)
         times.append(time)
         memories.append(mem)
 
